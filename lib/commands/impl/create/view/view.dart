@@ -40,6 +40,7 @@ Future<void> createView(String name,
     {String withArgument = '', String onCommand = ''}) async {
   var sample = GetViewSample(
     '',
+    name,
     '${name.pascalCase}View',
     '',
     '',
