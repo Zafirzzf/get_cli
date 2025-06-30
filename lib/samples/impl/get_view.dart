@@ -25,6 +25,9 @@ $import
 
 class $_viewName extends $_controllerName {
  const $_viewName({super.key});
+
+  "${_viewName}viewModel" get viewModel => controller.viewModel; 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-
 import 'package:dcli/dcli.dart';
 import 'package:recase/recase.dart';
 
@@ -15,6 +14,8 @@ import '../../../../functions/create/create_single_file.dart';
 import '../../../../functions/routes/get_add_route.dart';
 import '../../../../samples/impl/get_binding.dart';
 import '../../../../samples/impl/get_controller.dart';
+import '../../../../samples/impl/get_view_model.dart';
+import '../../../../samples/impl/get_model.dart';
 import '../../../../samples/impl/get_view.dart';
 import '../../../interface/command.dart';
 
@@ -122,6 +123,29 @@ class CreatePageCommand extends Command {
       ),
       'bindings',
     );
+    handleFileCreate(
+        name,
+        'view_model',
+        path,
+        extraFolder,
+        ViewModelSampleSample(
+          '',
+          name,
+          overwrite: overwrite,
+        ),
+        'view_models');
+
+    handleFileCreate(
+        name,
+        'model',
+        path,
+        extraFolder,
+        ModelSampleSample(
+          '',
+          name,
+          overwrite: overwrite,
+        ),
+        'models');
 
     addRoute(
       name,

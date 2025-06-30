@@ -35,12 +35,16 @@ class ${_fileName.pascalCase}Controller extends GetxController {
 ''';
   String get flutterController => '''import 'package:get/get.dart';
 
-class ${_fileName.pascalCase}Controller extends GetxController {
-  //TODO: Implement ${_fileName.pascalCase}Controller
+import '${_fileName}_view_model.dart';
+import 'package:aloha_universal/universal_controller.dart';
+
+class ${_fileName.pascalCase}Controller extends UniversalController {
+
+  final viewModel = ${_fileName.pascalCase}ViewModel();
   
-  final count = 0.obs;
   @override
   void onInit() {
+    internalViewmodel = viewmodel;
     super.onInit();
   }
   @override
@@ -51,7 +55,6 @@ class ${_fileName.pascalCase}Controller extends GetxController {
   void onClose() {
     super.onClose();
   }
-  void increment() => count.value++;
 }
 ''';
 }
