@@ -35,12 +35,11 @@ void addRoute(String nameRoute, String bindingDir, String viewDir) {
   pathSplit.removeWhere((element) => element == 'app' || element == 'modules');
 
   for (var i = 0; i < pathSplit.length; i++) {
-    pathSplit[i] =
-        pathSplit[i].snakeCase.snakeCase.toLowerCase().replaceAll('_', '-');
+    pathSplit[i] = pathSplit[i].replaceAll('_', '-');
   }
   var route = pathSplit.join('/');
 
-  var declareRoute = 'static const ${nameRoute.snakeCase.toUpperCase()} =';
+  var declareRoute = 'static const ${nameRoute} =';
   var line = "$declareRoute '/$route';";
   if (supportChildrenRoutes) {
     line = '$declareRoute ${_pathsToRoute(pathSplit)};';
@@ -60,7 +59,7 @@ String _pathsToRoute(List<String> pathSplit) {
   var sb = StringBuffer();
   for (var e in pathSplit) {
     sb.write('_Paths.');
-    sb.write(e.snakeCase.toUpperCase());
+    sb.write(e);
     if (e != pathSplit.last) {
       sb.write(' + ');
     }

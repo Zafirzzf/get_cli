@@ -18,7 +18,7 @@ import 'package:aloha_universal/universal_view_model.dart';
 
 class ${_fileName.pascalCase}ViewModel extends UniversalViewModel {
 
-  final model = ${_fileName.pascalCase}model();
+  final model = ${_fileName.pascalCase}Model();
   
   @override
   void installData() {

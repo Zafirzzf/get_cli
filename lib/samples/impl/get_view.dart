@@ -26,14 +26,13 @@ $import
 class $_viewName extends $_controllerName {
  const $_viewName({super.key});
 
-  ${_viewName}viewModel get viewModel => controller.viewModel; 
+  ${_viewName}Model get viewModel => controller.viewModel; 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('$_viewName'),
-        centerTitle: true,
+        title: const Text('$_viewName')
       ),
       body:const Center(
         child: Text(

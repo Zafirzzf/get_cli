@@ -44,7 +44,7 @@ class ${_fileName.pascalCase}Controller extends UniversalController {
   
   @override
   void onInit() {
-    internalViewmodel = viewmodel;
+    internalViewmodel = viewModel;
     super.onInit();
   }
   @override
