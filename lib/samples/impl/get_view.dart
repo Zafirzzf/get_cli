@@ -7,8 +7,9 @@ class GetViewSample extends Sample {
   final String _viewName;
   final String _controller;
   final bool _isServer;
+  final String _fileName;
 
-  GetViewSample(super.path, this._viewName, this._controller,
+  GetViewSample(super.path, this._fileName, this._viewName, this._controller,
       this._controllerDir, this._isServer,
       {super.overwrite});
 
@@ -21,6 +22,7 @@ class GetViewSample extends Sample {
 
   String get _flutterView => '''import 'package:flutter/material.dart';
 import 'package:get/get.dart'; 
+import '${_fileName}_view_model.dart';
 $import
 
 class $_viewName extends $_controllerName {

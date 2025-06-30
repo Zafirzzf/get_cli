@@ -100,6 +100,7 @@ class CreatePageCommand extends Command {
       extraFolder,
       GetViewSample(
         '',
+        name,
         '${name.pascalCase}View',
         '${name.pascalCase}Controller',
         controllerDir,
